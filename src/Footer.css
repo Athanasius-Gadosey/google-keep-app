@@ -1,0 +1,9 @@
+.footer{
+    text-align: center;
+}
+
+.footer__page{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

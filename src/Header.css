@@ -1,0 +1,13 @@
+.header__paper{
+    display: flex;
+}
+
+img {
+    width: 60px;
+}
+
+.header__name{
+    font-weight: 400;
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
