@@ -3,4 +3,5 @@
     margin: 20px;
     min-width: 200px;
     min-height: 100px;
+    display: inline-flex;
 }

@@ -7,8 +7,10 @@ function Note() {
   return (
     <div>
         <Paper className='paper__note'>
+           <div>
             <h1>Title</h1>
             <p>Content</p>
+           </div>
         </Paper>
     </div>
   )
