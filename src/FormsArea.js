@@ -1,17 +1,35 @@
 // jshint esversion:6
 import { Fab, Paper, TextField } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import './FormsArea.css';
 import AddIcon from '@mui/icons-material/Add';
 
-function FormsArea() {
+function FormsArea({addNote}) {
+    const [note, setNote] = useState({
+        title: '',
+        content: '',
+    });
+    function clickHandler(){
+        addNote(note);
+    }
+
+    function changeHandler(event){
+        const {name, value} = event.target
+        setNote(preValues =>{
+            return{
+                ...preValues,
+                [name]: value, 
+            }
+        })
+    }
+
   return (
     <div className='forms'>
         <Paper className='forms__area'>
             <form action="">
-                <TextField label='Title' fullWidth autoComplete='off'/>
-                <TextField label='Content' multiline rows={4} fullWidth autoComplete='off'/>
-                <Fab className='fab__icon'> <AddIcon /></Fab>
+                <TextField onChange={changeHandler} name='title' value={note.title} label='Title' fullWidth autoComplete='off'/>
+                <TextField onChange={changeHandler} name='content' value={note.content} label='Content' multiline rows={4} fullWidth autoComplete='off'/>
+                <Fab onClick={clickHandler} className='fab__icon'> <AddIcon /></Fab>
             </form>
         </Paper>
     </div>

@@ -1,4 +1,5 @@
 //jshint esversion:6
+import { useState } from 'react';
 import './App.css';
 import Footer from './Footer';
 import FormsArea from './FormsArea';
@@ -7,11 +8,19 @@ import Note from './Note';
 
 
 function App() {
+  const [notes, setNotes] = useState([]);
+  console.log(notes);
+
+  function addNote(note){
+    setNotes(preNotes => {
+      return [...preNotes, note]
+    })
+  }
   return (
     <div className="app">
       <Header />
     {/* formsArea */}
-      <FormsArea />
+      <FormsArea addNote={addNote} />
        {/* Note */}
        <Note />
        <Note />
