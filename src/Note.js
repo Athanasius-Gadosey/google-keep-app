@@ -1,16 +1,22 @@
 // jshint esversion:6
-import { Paper } from '@mui/material';
+import { Button, Paper } from '@mui/material';
 import React from 'react';
 import './Note.css';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-function Note() {
+function Note({title, content, id, delNote}) {
+    function clickHandler(){
+        delNote(id);
+    }
+    
   return (
     <div>
         <Paper className='paper__note'>
            <div>
-            <h1>Title</h1>
-            <p>Content</p>
+            <h1>{title}</h1>
+            <p>{content}</p>
            </div>
+           <Button onClick={clickHandler} className='del'> <DeleteIcon/> </Button>
         </Paper>
     </div>
   )

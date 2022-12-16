@@ -5,3 +5,8 @@
     min-height: 100px;
     display: inline-flex;
 }
+
+.del{
+    margin-left: 110px !important;
+    color: rgb(242, 32, 32) !important;
+}

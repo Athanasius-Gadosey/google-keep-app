@@ -11,6 +11,10 @@ function FormsArea({addNote}) {
     });
     function clickHandler(){
         addNote(note);
+        setNote({
+            title: '',
+            content: '',
+        });
     }
 
     function changeHandler(event){

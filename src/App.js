@@ -16,16 +16,22 @@ function App() {
       return [...preNotes, note]
     })
   }
+  function delNote(id) {
+    setNotes(preNotes=>{
+      return preNotes.filter((note, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <div className="app">
       <Header />
     {/* formsArea */}
       <FormsArea addNote={addNote} />
        {/* Note */}
-       <Note />
-       <Note />
-       <Note />
-
+       {notes.map((note, index)=>(
+        <Note id={index} delNote={delNote} title={note.title} content={note.content} />
+       ))}
       {/* footer */}
       <Footer />
     </div>
